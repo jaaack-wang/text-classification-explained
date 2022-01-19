@@ -262,7 +262,11 @@ def build_batches(dataset,
         text, label = [], []
         
         if include_seq_len:
-            text_len = [len(bt[0]) for bt in batch]
+            if max_seq_len:
+                text_len = [max_seq_len] * len(batch)
+            else:
+                text_len = [len(bt[0]) for bt in batch]
+                
             text_len = np.asarray(text_len, dtype=dtype)            
         
         for idx, bt in enumerate(batch):
