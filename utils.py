@@ -183,12 +183,13 @@ class TextVectorizer:
         self._create_vocab_dicts(unique_tks)
         
     def __call__(self, text, vectorized=False, dtype="int64"):
-        try:
-            if not self.vocab_to_idx:
+        if not self.vocab_to_idx:
+            try:
                 self.load_vocab_from_json()
-            return self.text_encoder(text)
-        except:
-            raise ValueError("No vocab is built or loaded.")
+            except:
+                raise ValueError("No vocab is built or loaded.")
+            
+        return self.text_encoder(text)
 
 
 def encode_dataset(dataset, encoder):
