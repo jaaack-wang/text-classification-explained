@@ -1,7 +1,7 @@
 '''
 Author: Zhengxiang (Jack) Wang 
 GitHub: https://github.com/jaaack-wang 
-About: Utility functions for my repository: text-matching-explained
+About: Utility functions for my repository: text-classification-explained
 '''
 from collections import Counter, defaultdict
 from collections.abc import Iterable
@@ -264,7 +264,8 @@ def build_batches(dataset,
         
         if include_seq_len:
             if max_seq_len:
-                text_len = [max_seq_len] * len(batch)
+                text_len = [len(bt[0]) if len(bt[0]) < max_seq_len 
+                              else max_seq_len for bt in batch]
             else:
                 text_len = [len(bt[0]) for bt in batch]
                 
