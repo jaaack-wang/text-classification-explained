@@ -6,7 +6,7 @@ We will build five deep learning models (BoW, CNN, RNN, LSTM, and GRU, or three 
 
 **One interesting fact** about this repository is that, I tried to twist `PyTorch` and `TensorFlow` to fit the way I built the models initially using `paddle`. I find it beneficial for myself to tell the nuances as well as commonalities among different deep learning frameworks, although doing so may not feel easy at first and certainly does not represent the best ways of employing those deep learning frameworks that I twisted. 
 
-This repository is closely related to another repository called [text-matching-explained](https://github.com/jaaack-wang/text-matching-explained). These two repositories are siblings because the baisc architectures for the five models are same except that models constucted here are able to take as inputs two pieces of texts instead of one single text. Therefore, you will simple large amounts of overlaps between these two repositories if you are interested in both. 
+This repository is closely related to another repository called [text-matching-explained](https://github.com/jaaack-wang/text-matching-explained). These two repositories are siblings because the baisc architectures for the five models are same except that models constucted here are only able to take as input one single instead of a text pair. Therefore, you will see large amounts of overlaps between these two repositories if you are interested in both. 
 
 
 ## General architecture
